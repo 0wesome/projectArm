@@ -1,9 +1,60 @@
 //bicep 校准时sensor(红黄绿，黄绿蓝)调到110， 手臂与shoulder两束对齐， range: 20-200 (0-180)， sensor背对你clockwise为增大角度，红为地线绿为火线
 //shoulder motor 从背面看过去 counterclockwise rotating means shoulder自身角度来说counterclockwise
 //userInput value----------------------------------------------------------------------------------------------
-int userInBack=90;
-int userInShoulder=90;
-int userInBicep=170+20;                  // plus 20 is defalt value, do not delect (20-200)
+
+int userDirectInBack = ;
+int userDirectInShoulder = ;
+int userDirectInBicep = ;
+int userDirectInElbow = ;
+
+//int userInBack=90;
+//int userInShoulder=90;
+//int userInBicep=170+20;                  // plus 20 is defalt value, do not delect (20-200)
+//int userInElbow=
+
+//input conveting-----------------------------------------------------------------------------------------------
+int sensorMaxBack =
+int sensorMinBack =
+int sensorMaxShoulder =
+int sensorMinShoulder =
+int sensorMaxBicep = 
+int sensorMinBicep = 
+int sensorMaxElbow = 116;
+int sensorMinElbow =
+
+
+int userInback = userDirectInBack - 20;
+  if(userInBack < sensorMaxBack) && (userInBack > sensorMinBack){
+   Serial.print("Back input angle valid");
+  }else{
+   Serial.print("Back input angle invalid");
+   userInback = 20;
+  }
+
+int userInShoulder = userDirectInShoulder -140;
+  if(userInShoudler < sensorMaxShoulder) && (userInShoulder > sensorMinShoulder){
+   Serial.print("Shoulder input angle valid");
+  }else{
+   Serial.print("Shoulder input angle invalid");
+   userInShoulder = 140;
+  }
+
+int userInBicep = userDirectInBicep - 180;
+  if(userInBicep < sensorMaxBicep) && (userInBicep > sensorMinBicep){
+   Serial.print("Bicep input angle valid");
+  }else{
+   Serial.print("Bicep input angle invalid");
+   userInBicep = 180;
+  }
+
+int userInElbow = userDirectInElbow - 20;
+  if(userInElbow < sensorMaxElbow) && (userInElbow > sensorMinElbow){
+   Serial.print("Elbow input angle valid");
+  }else{
+   Serial.print("Elbow input angle invalid");
+   userInElbow = 20;
+  }
+
 
 
 
