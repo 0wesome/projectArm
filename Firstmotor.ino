@@ -17,8 +17,8 @@ int sensorMaxBack =
 int sensorMinBack =
 int sensorMaxShoulder =
 int sensorMinShoulder =
-int sensorMaxBicep = 
-int sensorMinBicep = 
+int sensorMaxBicep = 200;
+int sensorMinBicep = 20
 int sensorMaxElbow = 116;
 int sensorMinElbow =
 
