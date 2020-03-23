@@ -12,52 +12,6 @@ int userDirectInElbow = ;
 //int userInBicep=170+20;                  // plus 20 is defalt value, do not delect (20-200)
 //int userInElbow=
 
-//input conveting-----------------------------------------------------------------------------------------------
-int sensorMaxBack =
-int sensorMinBack =
-int sensorMaxShoulder =
-int sensorMinShoulder =
-int sensorMaxBicep = 200;
-int sensorMinBicep = 20
-int sensorMaxElbow = 116;
-int sensorMinElbow =
-
-
-int userInback = userDirectInBack - 20;
-  if(userInBack < sensorMaxBack) && (userInBack > sensorMinBack){
-   Serial.print("Back input angle valid");
-  }else{
-   Serial.print("Back input angle invalid");
-   userInback = 20;
-  }
-
-int userInShoulder = userDirectInShoulder -140;
-  if(userInShoudler < sensorMaxShoulder) && (userInShoulder > sensorMinShoulder){
-   Serial.print("Shoulder input angle valid");
-  }else{
-   Serial.print("Shoulder input angle invalid");
-   userInShoulder = 140;
-  }
-
-int userInBicep = userDirectInBicep - 180;
-  if(userInBicep < sensorMaxBicep) && (userInBicep > sensorMinBicep){
-   Serial.print("Bicep input angle valid");
-  }else{
-   Serial.print("Bicep input angle invalid");
-   userInBicep = 180;
-  }
-
-int userInElbow = userDirectInElbow - 20;
-  if(userInElbow < sensorMaxElbow) && (userInElbow > sensorMinElbow){
-   Serial.print("Elbow input angle valid");
-  }else{
-   Serial.print("Elbow input angle invalid");
-   userInElbow = 20;
-  }
-
-
-
-
 //---------------------------------------------------------------------------------------------------------------
 //offset range of the sensor (range of each joint)
 //back
@@ -69,6 +23,7 @@ int maxShoulder = 180;
   //bicep
 int minBicep = 20;
 int maxBicep = 200;
+//
 
 
 
@@ -145,6 +100,55 @@ void setup() {
    //value set up
     Serial.begin(9600); // Set up the serial connection for printing, start communication at 9600 baud
 }
+
+
+
+//input conveting-----------------------------------------------------------------------------------------------
+int sensorMaxBack = 110;          //  rest @  20
+int sensorMinBack = 20;
+int sensorMaxShoulder = 180;      //  rest @  140
+int sensorMinShoulder = 30;
+int sensorMaxBicep = 220;         //  rest @  180
+int sensorMinBicep = 130
+int sensorMaxElbow = 116;         //  rest @  20
+int sensorMinElbow = 20;
+
+
+int userInback = userDirectInBack - 20;
+  if(userInBack < sensorMaxBack) && (userInBack > sensorMinBack){
+   Serial.print("Back input angle valid");
+  }else{
+   Serial.print("Back input angle invalid");
+   userInback = NULL;
+  }
+
+int userInShoulder = userDirectInShoulder -140;
+  if(userInShoudler < sensorMaxShoulder) && (userInShoulder > sensorMinShoulder){
+   Serial.print("Shoulder input angle valid");
+  }else{
+   Serial.print("Shoulder input angle invalid");
+   userInShoulder = NULL;
+  }
+
+int userInBicep = userDirectInBicep - 180;
+  if(userInBicep < sensorMaxBicep) && (userInBicep > sensorMinBicep){
+   Serial.print("Bicep input angle valid");
+  }else{
+   Serial.print("Bicep input angle invalid");
+   userInBicep = NULL;
+  }
+
+int userInElbow = userDirectInElbow - 20;
+  if(userInElbow < sensorMaxElbow) && (userInElbow > sensorMinElbow){
+   Serial.print("Elbow input angle valid");
+  }else{
+   Serial.print("Elbow input angle invalid");
+   userInElbow = NULL;
+  }
+
+
+
+
 
 void loop() {
   //read sensor section
